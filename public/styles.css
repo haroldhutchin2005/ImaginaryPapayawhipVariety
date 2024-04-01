@@ -1,0 +1,54 @@
+@keyframes strokeAnimation {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+    100% {
+        stroke-dasharray: 100 0;
+    }
+}
+
+.method {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.method:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.method[data-method="GET"] {
+    background-color: #48bb78; 
+}
+
+.method[data-method="POST"] {
+    background-color: #f6e05e; 
+}
+
+.api-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #4299e1, #ffffff);
+    z-index: 0;
+}
+
+.api-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #4299e1, #ffffff);
+    opacity: 0.5;
+    z-index: -1;
+    animation: strokeAnimation 5s infinite;
+    border-radius: 15px;
+}
+
+.api-item:hover::before {
+    animation: strokeAnimation 2s infinite;
+}
