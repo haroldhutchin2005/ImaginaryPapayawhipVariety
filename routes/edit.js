@@ -7,16 +7,23 @@ const router = express.Router();
 router.get("/edit", async (req, res) => {
   try {
     const edits = [
-      "Diether preset ",
+      "Diether preset",
       "jj smooth",
       "presetxml",
-      "preset alightmotion",
+      "preset alightmotion", 
+      "preset smooth jj",
+      "AMV edits",
+      "jedag jedug amv edit",
+      "OE jj preset",
+      "A2 JONELL?",
+      "Jhay on OE jj preset",
+      "A2 JJ PRESET SMOOTH JJ",
     ];
     const randomIndex = Math.floor(Math.random() * edits.length);
     const randomEdit = edits[randomIndex];
 
     const response = await axios.get(
-      `https://cc-project-apis-jonell-magallanes.onrender.com/api/tiktok/searchvideo?keywords=${encodeURIComponent(
+      `https://jonellccapisprojectv2-a62001f39859.herokuapp.com/api/tiktok/searchvideo?keywords=${encodeURIComponent(
         randomEdit,
       )}`,
       {
