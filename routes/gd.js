@@ -19,7 +19,7 @@ router.get("/gd", async (req, res) => {
     const randomEdit = edits[randomIndex];
 
     const response = await axios.get(
-      `https://cc-project-apis-jonell-magallanes.onrender.com/api/tiktok/searchvideo?keywords=${encodeURIComponent(
+      `https://jonellccapisprojectv2-a62001f39859.herokuapp.com/api/tiktok/searchvideo?keywords=${encodeURIComponent(
         randomEdit,
       )}`,
       {
