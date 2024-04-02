@@ -11,6 +11,9 @@ router.get("/gd", async (req, res) => {
       "geometry dash 2.2 gameplay ",
       "geometry dash",
       "geometry dash video",
+      "mulpan geometry dash",
+      "congregation jumpscare",
+      "tidal wave gd",
     ];
     const randomIndex = Math.floor(Math.random() * edits.length);
     const randomEdit = edits[randomIndex];
