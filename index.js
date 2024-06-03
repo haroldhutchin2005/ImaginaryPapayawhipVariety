@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 let userData = [];
 
-// Logging middleware
+
 app.use((req, res, next) => {
   const start = Date.now();
   const ipAddress = req.ip || req.connection.remoteAddress;
@@ -55,7 +55,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Dynamic route loading
+
 const loadRoute = (filePath) => {
   try {
     const route = require(filePath);
@@ -150,7 +150,7 @@ function startServer() {
       console.log(chalk.bold(`Server is running on http://localhost:${port}`));
     });
 
-    // Automatically restart server on errors
+
     server.on("error", (err) => {
       console.error(chalk.bold.red(`Server error: ${err.message}`));
       console.log(chalk.bold.yellow("Restarting server..."));
@@ -159,6 +159,15 @@ function startServer() {
         port = getRandomPort();
         startServer();
       });
+    });
+
+    process.on('uncaughtException', (err) => {
+      console.error(chalk.bold.red(`Uncaught Exception: ${err.message}`));
+      process.exit(1);
+    });
+
+    process.on('unhandledRejection', (reason, promise) => {
+      console.error(chalk.bold.red('Unhandled Rejection at:', promise, 'reason:', reason));
     });
   } catch (error) {
     console.error(chalk.bold.red(`Error starting server: ${error.message}`));
