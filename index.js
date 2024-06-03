@@ -6,7 +6,7 @@ const chalk = require("chalk");
 const { execSync } = require("child_process");
 
 const app = express();
-let port = process.env.PORT || 3030;
+let port = process.env.PORT || 5288;
 function getRandomPort() {
   return Math.floor(Math.random() * (65535 - 49152 + 1)) + 49152;
 }
